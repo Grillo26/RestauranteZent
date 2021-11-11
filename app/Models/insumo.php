@@ -9,6 +9,8 @@ class insumo extends Model
 {
     use HasFactory;
 
+    protected $fillable=['nombre_insumo','cantidad_insumo','unidadMedida_insumo'];
+
     //Relacion uno a muchos
     public function insumoPlatos(){
         return $this->hasMany('App\Models\insumo_plato');

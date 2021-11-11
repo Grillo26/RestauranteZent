@@ -9,6 +9,8 @@ class plato extends Model
 {
     use HasFactory;
 
+    protected $fillable=['precio_plato','tipo_plato','descripcion_plato','id_personal'];
+
     //relacion uno a muchos inversa
     public function personal(){
         return $this->belongsTo('App\Models\personal');
