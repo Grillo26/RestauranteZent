@@ -1,57 +1,10 @@
 <!-- component -->
-<!-- component -->
-<style>
-  .animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
-
-  .animated.faster {
-    -webkit-animation-duration: 500ms;
-    animation-duration: 500ms;
-  }
-
-  .fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
-  }
-
-  .fadeOut {
-    -webkit-animation-name: fadeOut;
-    animation-name: fadeOut;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-
-    to {
-      opacity: 0;
-    }
-  }
-</style>
-
-
   <div class="another-modal fixed w-full inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
   <div class="border border-blue-500 shadow-lg modal-container bg-white w-4/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
-    <div class="modal-content py-4 text-left px-6">
+    <div class="modal-content py-4 pb-1 text-left px-6">
       <!--Title-->
       <div class="flex justify-between items-center pb-3">
         <p class="text-2xl font-bold text-gray-500">Datos del Cliente</p>
-
       </div>
       <!--Body-->
       <div class="my-5 mr-5 ml-5 flex justify-center">
@@ -89,10 +42,19 @@
                           <input type="text" id="fechNac" wire:model="fechNac" autocomplete="off" name="fechNac" class="h-3 p-6 w-full border-2 border-gray-300 mb-5 rounded-md" placeholder="Ejemplo. 1997-10-26">
                         </div>
                       </div>
+
+                      <!--Observaciones-->
+                      <div class="">
+                        <label for="ob" class="text-md text-gray-600">Observaciones</label>
+                      </div>
+                      <div class="">
+                        <input type="text" id="ob" wire:model="ob" autocomplete="off" name="fechNac" class="h-3 p-6 w-full border-2 border-gray-300 mb-5 rounded-md" placeholder="Ejemplo. Cliente frecuente">
+                      </div>
+                    </div>
                   </form>
       </div>
       <!--Footer-->
-      <div class="flex justify-end pt-2 space-x-14">
+      <div class="flex justify-center pt-1 pb-6 space-x-13">
         <button
           wire:click="cerrarModal()" type="button" class="px-4 bg-gray-200 p-3 rounded text-black hover:bg-gray-300 font-semibold">Cancelar</button>
         <button

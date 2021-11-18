@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Livewire\Clientes;
+use App\Http\Livewire\Insumo;
+use App\Http\Livewire\Proveedor;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +30,17 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
        return view('dashboard');;
    })->name('dashboard');
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/proveedor', Proveedor::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');;
+    })->name('dashboard');
+ });
+
+ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/insumo', Insumo::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');;
+    })->name('dashboard');
+ });

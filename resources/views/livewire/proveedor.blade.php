@@ -16,13 +16,13 @@
             </button>
         </div>
         @endif
-        <!--En -->
+        <!--End Alert -->
 
         <button wire:click="crear()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >Nuevo</button> <br><br>
 
         @if ($modal)
-            @include('livewire.crear')
+            @include('livewire.crearProveedor')
         @endif
             <table class="table-fixed w-full">
                 <thead>
@@ -31,24 +31,22 @@
                         <th class="px-4 py-2">Nombre</th>
                         <th class="px-4 py-2">Dirección</th>
                         <th class="px-4 py-2">Teléfono</th>
-                        <th class="px-4 py-2">Fecha de Nacimiento</th>
-                        <th class="px-4 py-2">Observaciones</th>
+                        <th class="px-4 py-2">Email</th>
                         <th class="px-4 py-2">Acciones</th>
                     </tr>
                 </thead>
         
                 <tbody>
-                    @foreach ($clientes as $cliente)
+                    @foreach ($proveedors as $proveedor)
                     <!--Body of table-->
                     <tr>
-                        <td class="border px-4 py-2">{{$cliente->nombre_cliente}}</td>
-                        <td class="border px-4 py-2">{{$cliente->dirección_cliente}}</td>
-                        <td class="border px-4 py-2">{{$cliente->telefono_cliente}}</td>
-                        <td class="border px-4 py-2">{{$cliente->fechaNac_cliente}}</td>
-                        <td class="border px-4 py-2">{{$cliente->observaciones_cliente}}</td>
+                        <td class="border px-4 py-2">{{$proveedor->nombre_proveedor}}</td>
+                        <td class="border px-4 py-2">{{$proveedor->direccion_proveedor}}</td>
+                        <td class="border px-4 py-2">{{$proveedor->telefono_proveedor}}</td>
+                        <td class="border px-4 py-2">{{$proveedor->email}}</td>
                         <td class="border px-4 py-2 text-center"> 
-                            <button wire:click="editar({{$cliente->id}})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Editar</button>
-                            <button wire:click="borrar({{$cliente->id}})" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Borrar</button>
+                            <button wire:click="editar({{$proveedor->id}})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Editar</button>
+                            <button wire:click="borrar({{$proveedor->id}})" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Borrar</button>
                         </td>
                     </tr>
                     @endforeach
@@ -59,7 +57,7 @@
             </table>
             
         </div>
-        {{$clientes->links()}}
+        {{$proveedors->links()}}
     </div>
     
 </div>
