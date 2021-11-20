@@ -4,7 +4,7 @@
       <div class="modal-content py-4 pb-1 text-left px-6">
         <!--Title-->
         <div class="flex justify-between items-center pb-3">
-          <p class="text-2xl font-bold text-gray-500">Datos del Turno</p>
+          <p class="text-2xl font-bold text-gray-500">Datos del Tipo de Personal</p>
         </div>
         <!--Body-->
         <div class="my-5 mr-5 ml-5 flex justify-center">
@@ -15,7 +15,7 @@
                             <label for="descripcion" class="text-md text-gray-600">Turno</label>
                           </div>
                           <div class="">
-                            <input type="text" id="turno" wire:model="descripcion" autocomplete="off" name="turno" class="h-3 p-6 w-full border-2 border-gray-300 mb-5 rounded-md" placeholder="Ejemplo. Medio día">
+                            <input type="text" id="tipo" wire:model="descripcion" autocomplete="off" name="turno" class="h-3 p-6 w-full border-2 border-gray-300 mb-5 rounded-md" placeholder="Ejemplo. Medio día">
                           </div>
                         </div>
   

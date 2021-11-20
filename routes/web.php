@@ -5,6 +5,7 @@ use App\Http\Livewire\Insumo;
 use App\Http\Livewire\Personal;
 use App\Http\Livewire\Proveedor;
 use App\Http\Livewire\Turno;
+use App\Http\Livewire\TipoPersonal;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,6 +57,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
  Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/turno', Turno::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');;
+    })->name('dashboard');
+ });
+
+ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/tipoPersonal', TipoPersonal::class);
     Route::get('/dashboard', function () {
         return view('dashboard');;
     })->name('dashboard');

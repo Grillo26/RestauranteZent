@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class turno extends Model
 {
+    protected $fillable = ['id','descripcion'];
     use HasFactory;
 
     //relacion uno a muchos

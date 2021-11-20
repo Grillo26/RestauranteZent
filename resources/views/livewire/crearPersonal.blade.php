@@ -38,10 +38,10 @@
                           <div class="">
                             <label for="tipo" class="text-md text-gray-600">Tipo de Personal</label>
                           </div>
-                          <div class="">
-                              <select name="tipo" id="tipo">
-                                  @foreach ($personals as $item)
-                                    <option value="{{$item->id}}">{{$item->nombre_personal}}</option>  
+                          <div class="block text-left">
+                              <select class="w-full p-3 text-base border-gray-300 placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" name="tipo" id="tipo">
+                                  @foreach ($turnos as $turno)
+                                    <option wire:model="tipo" value="{{$turno->id}}">{{$turno->descripcion}}</option>  
                                   @endforeach  
                               </select>
                           </div>
@@ -49,10 +49,14 @@
   
                         <!--Turno-->
                         <div class="">
-                          <label for="turno" class="text-md text-gray-600">turno</label>
+                          <label for="turno" class="text-md text-gray-600">Turno</label>
                         </div>
-                        <div class="">
-                          <input type="text" id="turno" wire:model="turno" autocomplete="off" name="turno" class="h-3 p-6 w-full border-2 border-gray-300 mb-5 rounded-md" placeholder="Ejemplo. Noche">
+                        <div class="block text-left">
+                          <select class=" p-3 text-base border-gray-300 placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" name="tipo" id="tipo">
+                            @foreach ($tipo_personal as $tipo)
+                              <option wire:model="turno" value="{{$tipo->id}}">{{$tipo->descripcion}}</option>  
+                            @endforeach  
+                        </select>
                         </div>
                       </div>
                     </form>

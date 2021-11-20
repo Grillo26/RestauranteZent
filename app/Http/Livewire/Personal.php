@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use App\Models\personal as ModelsPersonal;
+use App\Models\turno;
+use App\Models\tipo_personal;
 use Illuminate\Database\Events\ModelsPruned;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -15,7 +17,12 @@ class Personal extends Component
 
     public function render()
     {
-        return view('livewire.personal',['personals'=> ModelsPersonal::orderBy('id','desc')->paginate(20)]);
+        return view('livewire.personal', 
+        [
+            'turnos'=> turno::get(),
+            'tipo_personal'=> tipo_personal::get(), 
+            'personals'=> ModelsPersonal::orderBy('id','desc')->paginate(20)]);
+        
 
     } 
 

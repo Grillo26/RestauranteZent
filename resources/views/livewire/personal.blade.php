@@ -39,18 +39,34 @@
         
                 <tbody>
                     @foreach ($personals as $personal)
+                        
+                            
+                        
                     <!--Body of table-->
                     <tr>
                         <td class="border px-4 py-2">{{$personal->nombre_personal}}</td>
                         <td class="border px-4 py-2">{{$personal->telefono_personal}}</td>
                         <td class="border px-4 py-2">{{$personal->direccion_personal}}</td>
-                        <td class="border px-4 py-2">{{$personal->id_tipo}}</td>
-                        <td class="border px-4 py-2">{{$personal->id_turno}}</td>
+
+                        @foreach ($tipo_personal as $tipo)
+                        @if ($personal->id_tipo == $tipo->id)
+                        <td class="border px-4 py-2">{{$tipo->descripcion}}</td>  
+                        @endif
+
+                        @endforeach
+                        
+                        @foreach ($turnos as $turno)
+                        @if ($personal->id_turno == $turno->id)
+                        <td class="border px-4 py-2">{{$turno->descripcion}}</td>
+                        @endif
+                        @endforeach
+                        
                         <td class="border px-4 py-2 text-center"> 
                             <button wire:click="editar({{$personal->id}})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Editar</button>
                             <button wire:click="borrar({{$personal->id}})" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Borrar</button>
                         </td>
                     </tr>
+                        
                     @endforeach
 
 
