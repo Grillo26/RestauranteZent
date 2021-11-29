@@ -33,5 +33,6 @@ class TipoPersonalSeeder extends Seeder
         $personal3 = new tipo_personal();
         $personal3->descripcion="Cajero";
         $personal3->save();
+
     }
 }

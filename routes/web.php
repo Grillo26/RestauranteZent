@@ -2,10 +2,14 @@
 
 use App\Http\Livewire\Clientes;
 use App\Http\Livewire\Insumo;
+use App\Http\Livewire\Mesa;
+use App\Http\Livewire\Pedido;
 use App\Http\Livewire\Personal;
+use App\Http\Livewire\Plato;
 use App\Http\Livewire\Proveedor;
 use App\Http\Livewire\Turno;
 use App\Http\Livewire\TipoPersonal;
+use App\Http\Livewire\Ventas;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,6 +68,34 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
  Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/tipoPersonal', TipoPersonal::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');;
+    })->name('dashboard');
+ });
+
+ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/Plato', Plato::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');;
+    })->name('dashboard');
+ });
+
+ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/Pedidos', Pedido::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');;
+    })->name('dashboard');
+ });
+
+ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/Mesas', Mesa::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');;
+    })->name('dashboard');
+ });
+
+ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/Ventas', Ventas::class);
     Route::get('/dashboard', function () {
         return view('dashboard');;
     })->name('dashboard');

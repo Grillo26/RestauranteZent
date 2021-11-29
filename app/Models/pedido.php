@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class pedido extends Model
 {
+    protected $fillable=['id_cliente','tipo_pedido','id_mesa','id_personal','fecha_pedido'];
     use HasFactory;
 
      //relacion uno a muchos

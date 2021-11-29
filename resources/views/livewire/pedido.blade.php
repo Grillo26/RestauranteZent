@@ -1,5 +1,5 @@
 <x-slot name="header">
-    <h1 class="text-gray-900">Lista del personal registrado</h1>
+    <h1 class="text-gray-900">Lista de Pedidos Realizados</h1>
 </x-slot>
 <div class="py-12">
     <div class="max-w-7x1 mx-auto sm:px6 lg:px-8">
@@ -22,44 +22,47 @@
         >Nuevo</button> <br><br>
 
         @if ($modal)
-            @include('livewire.crearPersonal')
+            @include('livewire.crearPedido')
         @endif
             <table class="table-fixed w-full">
                 <thead>
                     <!--Head of table-->
                     <tr class="bg-indigo-600 text-white">
-                        <th class="px-4 py-2">Nombre</th>
-                        <th class="px-4 py-2">Teléfono</th>
-                        <th class="px-4 py-2">Dirección</th>
-                        <th class="px-4 py-2">Tipo</th>
-                        <th class="px-4 py-2">Turno</th>
+                        <th class="px-4 py-2">Cliente</th>
+                        <th class="px-4 py-2">Pedido</th>
+                        <th class="px-4 py-2">Mesa</th>
+                        <th class="px-4 py-2">Personal Turno</th>
+                        <th class="px-4 py-2">Fecha Pedido</th>
                         <th class="px-4 py-2">Acciones</th>
                     </tr>
                 </thead>
         
                 <tbody>
-                    @foreach ($personals as $personal)
-                        
-                            
-                        
+                    @foreach ($pedidos as $pedido) 
                     <!--Body of table-->
                     <tr>
-                        <td class="border px-4 py-2">{{$personal->nombre_personal}}</td>
-                        <td class="border px-4 py-2">{{$personal->telefono_personal}}</td>
-                        <td class="border px-4 py-2">{{$personal->direccion_personal}}</td>
+                        @foreach ($clientes as $cliente)
+                        @if ($pedido->id_cliente == $cliente->id)
+                        <td class="border px-4 py-2">{{$cliente->nombre_cliente}}</td>  
+                        @endif
+                        @endforeach
 
-                        @foreach ($tipo_personal as $tipo)
-                        @if ($personal->id_tipo == $tipo->id)
-                        <td class="border px-4 py-2">{{$tipo->descripcion}}</td>  
+                        <td class="border px-4 py-2">{{$pedido->tipo_pedido}}</td>
+
+                        @foreach ($mesas as $mesa)
+                        @if ($pedido->id_mesa == $mesa->id)
+                        <td class="border px-4 py-2">{{$mesa->Ubicacion}}</td>  
                         @endif
                         @endforeach
-            
-                        @foreach ($turnos as $turno)
-                        @if ($personal->id_turno == $turno->id)
-                        <td class="border px-4 py-2">{{$turno->descripcion}}</td>
+
+                        @foreach ($personals as $personal)
+                        @if ($pedido->id_personal == $personal->id)
+                        <td class="border px-4 py-2">{{$personal->nombre_personal}}</td>  
                         @endif
                         @endforeach
-                        
+
+                        <td class="border px-4 py-2">{{$pedido->fecha_pedido}}</td>
+
                         <td class="border px-4 py-2 text-center"> 
                             <button wire:click="editar({{$personal->id}})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Editar</button>
                             <button wire:click="borrar({{$personal->id}})" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Borrar</button>
@@ -74,7 +77,7 @@
             </table>
             
         </div>
-        {{$personals->links()}}
+        {{$pedidos->links()}}
     </div>
     
 </div>

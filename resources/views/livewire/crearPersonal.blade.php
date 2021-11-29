@@ -39,10 +39,10 @@
                             <label for="tipo" class="text-md text-gray-600">Tipo de Personal</label>
                           </div>
                           <div class="block text-left">
-                              <select class="w-full p-3 text-base border-gray-300 placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" name="tipo" id="tipo">
-                                  @foreach ($turnos as $turno)
-                                    <option wire:model="tipo" value="{{$turno->id}}">{{$turno->descripcion}}</option>  
-                                  @endforeach  
+                              <select wire:model="Tipo" class="w-full p-3 text-base border-gray-300 placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" placeholder="Seleccione tipo de personal" name="tipo" id="tipo">
+                                @foreach ($tipo_personal as $tipo)
+                              <option  value="{{$tipo->id}}">{{$tipo->descripcion}}</option>  
+                              @endforeach     
                               </select>
                           </div>
                         </div>
@@ -52,9 +52,9 @@
                           <label for="turno" class="text-md text-gray-600">Turno</label>
                         </div>
                         <div class="block text-left">
-                          <select class=" p-3 text-base border-gray-300 placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" name="tipo" id="tipo">
-                            @foreach ($tipo_personal as $tipo)
-                              <option wire:model="turno" value="{{$tipo->id}}">{{$tipo->descripcion}}</option>  
+                          <select wire:model="Turno" class=" p-3 text-base border-gray-300 placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" name="tipo" id="tipo">
+                            @foreach ($turnos as $turno)
+                            <option value="{{$turno->id}}">{{$turno->descripcion}}</option>  
                             @endforeach  
                         </select>
                         </div>
