@@ -46,7 +46,7 @@
                         <td class="border px-4 py-2">{{$plato->descripcion_plato}}</td>
 
                         @foreach ($personals as $personal)
-                        @if ($plato->id == $personal->id)
+                        @if ($plato->id_personal == $personal->id)
                         <td class="border px-4 py-2">{{$personal->nombre_personal}}</td>  
                         @endif
                         @endforeach

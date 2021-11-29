@@ -20,7 +20,7 @@ class Personal extends Component
         return view('livewire.personal', 
         [
             'turnos'=> turno::get(),
-            'tipo_personal'=> tipo_personal::get(), 
+            'tipo_personals'=> tipo_personal::get(), 
             'personals'=> ModelsPersonal::orderBy('id','desc')->paginate(20)]);
         
 

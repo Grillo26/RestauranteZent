@@ -64,8 +64,8 @@
                         <td class="border px-4 py-2">{{$pedido->fecha_pedido}}</td>
 
                         <td class="border px-4 py-2 text-center"> 
-                            <button wire:click="editar({{$personal->id}})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Editar</button>
-                            <button wire:click="borrar({{$personal->id}})" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Borrar</button>
+                            <button wire:click="editar({{$pedido->id}})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Editar</button>
+                            <button wire:click="borrar({{$pedido->id}})" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Borrar</button>
                         </td>
                     </tr>
                         

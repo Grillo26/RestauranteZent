@@ -23,8 +23,8 @@ class TipoPersonalSeeder extends Seeder
         $personal->save();
 
         $personal1 = new tipo_personal();
-        $personal->descripcion="Mesero";
-        $personal->save();
+        $personal1->descripcion="Mesero";
+        $personal1->save();
 
         $personal2 = new tipo_personal();
         $personal2->descripcion="Ayudante de cocina";
@@ -33,6 +33,10 @@ class TipoPersonalSeeder extends Seeder
         $personal3 = new tipo_personal();
         $personal3->descripcion="Cajero";
         $personal3->save();
+
+        $personal4 = new tipo_personal();
+        $personal4->descripcion="Cocinero 2";
+        $personal4->save();
 
     }
 }

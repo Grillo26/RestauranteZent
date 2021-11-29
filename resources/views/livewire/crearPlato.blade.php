@@ -39,9 +39,11 @@
                           <label for="personal" class="text-md text-gray-600">Cocinero</label>
                         </div>
                         <div class="block text-left">
-                          <select wire:model="personal" class=" p-3 text-base border-gray-300 placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" name="tipo" id="tipo">
+                          <select wire:model="personal" class=" p-4 text-base border-gray-300 placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" name="tipo" id="tipo">
                             @foreach ($personals as $personal)
-                            <option value="{{$personal->id}}">{{$personal->nombre_personal}}</option>  
+                            @if ($personal->id_tipo == 6)
+                            <option value="{{$personal->id}}">{{$personal->nombre_personal}}</option>
+                            @endif
                             @endforeach  
                         </select>
                         </div>

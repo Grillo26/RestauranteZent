@@ -59,7 +59,7 @@ class Plato extends Component
         ModelsPlato::updateOrCreate(['id'=>$this->id_plato],[
             'precio_plato'=>$this->precio,
             'tipo_plato'=>$this->tipo,
-            'descripcion'=>$this->descripcion,
+            'descripcion_plato'=>$this->descripcion,
             'id_personal'=>$this->personal
         ]);
         $this->cerrarModal();

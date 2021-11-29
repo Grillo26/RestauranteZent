@@ -32,7 +32,7 @@
 
                             <!--Mesas--> 
                             <div class="">
-                                <label for="mesa" class="text-md text-gray-600">mesa</label>
+                                <label for="mesa" class="text-md text-gray-600">Mesa</label>
                             </div>
                             <div class="block text-left">
                                 <select wire:model="mesa" class="w-full p-3 text-base border-gray-300 placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline">
@@ -41,15 +41,17 @@
                                 @endforeach     
                             </select></br></br>
                             </div>
-                            
+
                             <!--Personals--> 
                             <div class="">
-                                <label for="cliente class="text-md text-gray-600">Personal</label>
+                                <label for="cliente" class="text-md text-gray-600">Personal</label>
                             </div>
                             <div class="block text-left">
                                 <select wire:model="personal" class="w-full p-3 text-base border-gray-300 placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline">
                                 @foreach ($personals as $personal)
-                                <option  value="{{$personal->id}}">{{$personal->nombre_personal}}</option>  
+                                @if ($personal->id_tipo == 4)
+                                    <option value="{{$personal->id}}">{{$personal->nombre_personal}}</option>  
+                                @endif
                                 @endforeach     
                               </select></br></br>
                             </div>

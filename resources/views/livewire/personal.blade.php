@@ -48,7 +48,7 @@
                         <td class="border px-4 py-2">{{$personal->telefono_personal}}</td>
                         <td class="border px-4 py-2">{{$personal->direccion_personal}}</td>
 
-                        @foreach ($tipo_personal as $tipo)
+                        @foreach ($tipo_personals as $tipo)
                         @if ($personal->id_tipo == $tipo->id)
                         <td class="border px-4 py-2">{{$tipo->descripcion}}</td>  
                         @endif
