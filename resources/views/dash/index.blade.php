@@ -2,7 +2,6 @@
 
 @section('title', 'Administración')
 
-
 @section('content')
 <div>
     <div class="flex overflow-hidden bg-white">
