@@ -43,6 +43,13 @@ Route::get('/dash', 'App\Http\Controllers\DashboardController@index');
 // })->name('dash');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashb', Dashboard::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');;
+    })->name('dashboard');
+ });
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
    Route::get('/clientes', Clientes::class);
    Route::get('/dashboard', function () {
        return view('dashboard');;
