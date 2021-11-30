@@ -1,6 +1,5 @@
-<x-slot name="header">
-    <h1 class="text-gray-900">Lista de Mesas</h1>
-</x-slot>
+
+<h1 class="text-gray-900">Lista de Mesas</h1>
 <div class="py-12">
     <div class="max-w-7x1 mx-auto sm:px6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-x1 sm:rounded-lg px-4 py-4">
@@ -57,7 +56,6 @@
     </div>
     
 </div>
-
 
 
     
