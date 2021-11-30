@@ -3,19 +3,48 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
-                <!-- Logo
+                <!-- Logo-->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
-
-                <!-- Navigation Links 
+            
+                <!-- Navigation Links-->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Bienvenidos') }}
                     </x-jet-nav-link>
-                </div>-->
+
+                    <x-jet-nav-link href="/clientes">
+                        Clientes
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="/proveedor">
+                        Proveedores
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="/insumo">
+                        Insumos
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="/personal">
+                        Personal
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="/plato">
+                        Platos
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="/pedidos">
+                        Pedidos
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="/mesas">
+                        Mesas
+                    </x-jet-nav-link>
+                  
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -118,6 +147,10 @@
                                     {{ __('Log Out') }}
                                 </x-jet-dropdown-link>
                             </form>
+
+                            <x-jet-dropdown-link href="dash">
+                                AdminDashboard
+                            </x-jet-dropdown-link>
                         </x-slot>
                     </x-jet-dropdown>
                 </div>

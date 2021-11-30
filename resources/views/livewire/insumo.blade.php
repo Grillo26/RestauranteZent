@@ -1,6 +1,4 @@
-<x-slot name="header">
-    <h1 class="text-gray-900">Lista de clientes registrados</h1>
-</x-slot>
+
 <div class="py-12">
     <div class="max-w-7x1 mx-auto sm:px6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-x1 sm:rounded-lg px-4 py-4">
@@ -18,16 +16,18 @@
         @endif
         <!--En -->
 
-        <button wire:click="crear()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >Nuevo</button> <br><br>
-
+        <div class="flex space-x-5 px-4 pb-5">
+            <h1 class="text-3xl text-gray-600">Lista de Insumos</h1>
+            <button wire:click="crear()" class="bg-blue-300 hover:bg-blue-700 text-white font-bold p-2 rounded"
+                >+</button> <br><br>
+        </div>
         @if ($modal)
             @include('livewire.crearInsumo')
         @endif
             <table class="table-fixed w-full">
                 <thead>
                     <!--Head of table-->
-                    <tr class="bg-indigo-600 text-white">
+                    <tr class="bg-blue-600 text-white">
                         <th class="px-4 py-2">Nombre</th>
                         <th class="px-4 py-2">Cantidad</th>
                         <th class="px-4 py-2">Unidad de Medida</th>

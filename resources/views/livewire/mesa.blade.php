@@ -1,7 +1,9 @@
 
-<h1 class="text-gray-900">Lista de Mesas</h1>
 <div class="py-12">
+
     <div class="max-w-7x1 mx-auto sm:px6 lg:px-8">
+
+
         <div class="bg-white overflow-hidden shadow-x1 sm:rounded-lg px-4 py-4">
 
         <!--Alerta Borrado Correctamente-->
@@ -17,16 +19,18 @@
         @endif
         <!--En -->
 
-        <button wire:click="crear()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >Nuevo</button> <br><br>
-
+        <div class="flex space-x-5 px-4 pb-5">
+            <h1 class="text-3xl text-gray-600">Lista de Mesas Habilitadas</h1>
+            <button wire:click="crear()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 rounded"
+                >+</button> <br><br>
+        </div>
         @if ($modal)
             @include('livewire.crearMesa')
         @endif
             <table class="table-fixed w-full">
                 <thead>
                     <!--Head of table-->
-                    <tr class="bg-indigo-600 text-white">
+                    <tr class="bg-blue-600 text-white">
                         <th class="px-4 py-2">Capacidad</th>
                         <th class="px-4 py-2">Ubicación</th>
                         <th class="px-4 py-2">Acciones</th>
@@ -37,8 +41,8 @@
                     @foreach ($mesas as $mesa)
                     <!--Body of table-->
                     <tr>
-                        <td class="border px-4 py-2">{{$mesa->CantMaxComensales}}</td>
-                        <td class="border px-4 py-2">{{$mesa->Ubicacion}}</td>
+                        <td class="border px-4 py-2 text-center">{{$mesa->CantMaxComensales}}</td>
+                        <td class="border px-4 py-2 text-center">{{$mesa->Ubicacion}}</td>
                         <td class="border px-4 py-2 text-center"> 
                             <button wire:click="editar({{$mesa->id}})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Editar</button>
                             <button wire:click="borrar({{$mesa->id}})" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Borrar</button>
@@ -54,9 +58,8 @@
         </div>
 
     </div>
-    
 </div>
 
 
-    
 
+    

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Clientes;
+use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Insumo;
 use App\Http\Livewire\Mesa;
 use App\Http\Livewire\Pedido;
@@ -35,9 +36,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dash', function () {
-    return view('dash.index');
-})->name('dash');
+Route::get('/dash', 'App\Http\Controllers\DashboardController@index');
+
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dash', function () {
+//     return view('dash.index');
+// })->name('dash');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
    Route::get('/clientes', Clientes::class);
@@ -82,28 +85,28 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
  });
 
  Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/Plato', Plato::class);
+    Route::get('/plato', Plato::class);
     Route::get('/dashboard', function () {
         return view('dashboard');;
     })->name('dashboard');
  });
 
  Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/Pedidos', Pedido::class);
+    Route::get('/pedidos', Pedido::class);
     Route::get('/dashboard', function () {
         return view('dashboard');;
     })->name('dashboard');
  });
 
  Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/Mesas', Mesa::class);
+    Route::get('/mesas', Mesa::class);
     Route::get('/dashboard', function () {
         return view('dashboard');;
     })->name('dashboard');
  });
 
  Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/Ventas', Ventas::class);
+    Route::get('/ventas', Ventas::class);
     Route::get('/dashboard', function () {
         return view('dashboard');;
     })->name('dashboard');
